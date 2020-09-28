@@ -32,4 +32,4 @@ O comando irá baixar todas as dependências do projeto e criar um diretório *t
 
 ## Configuração
 
-Para executar o projeto, é necessário utilizar o STS, para que o mesmo identifique as dependências necessárias para a execução no repositório .m2 do Maven. Uma vez importado o projeto, basta rodar a classe "ConsultarcepApplication" e o spring boot ira ligar um servidor localhost na porta 8080.
+Para executar o projeto, é necessário utilizar o STS, para que o mesmo identifique as dependências necessárias para a execução no repositório.m2 do Maven. Uma vez importado o projeto, basta rodar a classe "ConsultarcepApplication" e o Spring Boot irá ligar um servidor localhost na porta 8080.
