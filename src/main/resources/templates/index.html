@@ -2,8 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.5.2/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="css/index.css"/>
+<link rel="icon" type="image/png" href="img/favicon.png">
 <title>Consultar CEP</title>
 </head>
 <body>
@@ -23,33 +25,33 @@
    	
     <th:block th:include="mensagemValidacao"></th:block>
     
-    <div class="container containerResultado" th:each="cep: ${cep}" th:if="${cep}">
+    <div class="d-flex-inline container containerResultado" th:each="cep: ${cep}" th:if="${cep}">
     <h2 class="text-center titulo text-white">Resultado :</h2>
      
     <div class="row centro w-75">
-    <div class="col-md-4">
+    <div class="col-md-12 col-lg-5">
     <p class="titulo text-center">Cep</p>
     <p class="m-2 text-center form-control" th:text="${cep.cep}"></p>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-12 col-lg-7">
     <p class="titulo text-center">Logradouro</p>
     <p class="m-1 text-center form-control" th:text="${cep.logradouro}"></p>
     </div>
     </div>
     
     <div class="row centro w-75">
-    <div class="col-md-8">
+    <div class="col-md-12 col-lg-8">
     <p class="titulo text-center">Rua</p>
     <p class="m-1 text-center form-control" th:text="${cep.localidade}"></p>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-12 col-lg-4">
     <p class="titulo text-center">Bairro</p>
     <p class="m-1 text-center form-control" th:text="${cep.bairro}"></p>
     </div>
     </div>
     
     <div class="row centro w-25">
-    <div class="col-md-12">
+    <div class="col-sm-12">
     <p class="titulo text-center">Estado</p>
     <p class="text-center form-control" th:text="${cep.uf}">a</p>
     </div>
@@ -57,13 +59,12 @@
     
     </div>
 	</main>
-	
-
-    <footer class="footer">
-      <div class="container">
-        <span class="text-muted">Feito utilizando o webservice da <a target="_blank" href="https://viacep.com.br">ViaCEP</a> e tecnologias do Spring(Spring MVC, RestTemplate, Spring Boot...)</span>
+ <footer class="sobre d-flex">
+      <div class="container-fluid">
+       <span class="text-muted">Feito utilizando os dados do webservice <a target="_blank" href="https://viacep.com.br">ViaCEP</a> e as tecnologias do Spring (Spring MVC, RestTemplate, Spring Boot...)</span>
       </div>
     </footer>
+    
 </body>
 <script type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>

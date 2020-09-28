@@ -41,7 +41,7 @@ public class ConsultaController {
 			model.addAttribute("mensagem", "Consulta concluída com sucesso.");
 				return "index";
 			}else {
-				attributes.addFlashAttribute("mensagemErro", "CPF não encontrado no banco de dados do ViaCEP, tente novamente.");
+				attributes.addFlashAttribute("mensagemErro", "CEP não encontrado no banco de dados do ViaCEP, tente novamente.");
 				return "redirect:/";
 			}
 		}
