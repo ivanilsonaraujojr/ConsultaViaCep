@@ -17,8 +17,8 @@
     <div class="form-group text-center">
     	<label for="cepCodigo" class="subtitulo">Digite um CEP válido:</label>
     	<p class="alert alert-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></p> 
-        <input type="text" class="form-control centro campoCepCodigo" placeholder="xx.xxx-xxx" autocomplete="off" name="cepCodigo" id="cepCodigo" th:field="*{codigo}" />
-        <button type="submit" class="mt-2 btn btn-primary" id="btnConsultar" disabled>Consultar</button>
+        <input type="text" class="form-control centro campoCepCodigo" placeholder="xx.xxx-xxx" autocomplete="off" name="cepCodigo" id="cepCodigo" th:field="*{codigo}" required/>
+        <button type="submit" class="mt-2 btn btn-primary" id="btnConsultar">Consultar</button>
     </div>
     </form>
    	</div>

@@ -3,6 +3,7 @@ package br.com.ivanilsonjr.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,7 +29,7 @@ public class ConsultaController {
 	}
 	
 	@PostMapping(value="/")
-	public String consultarCep(@ModelAttribute("cepInserido") @Valid Cep cep, BindingResult result, RedirectAttributes attributes, Model model){
+	public String consultarCep(@ModelAttribute("cepInserido") @Valid Cep cep, BindingResult result, Model model){
 		String codigoSemMascara = cep.getCodigo()
 				.replace(".","")
 				.replace("-","");
@@ -41,8 +42,8 @@ public class ConsultaController {
 			model.addAttribute("mensagem", "Consulta concluída com sucesso.");
 				return "index";
 			}else {
-				attributes.addFlashAttribute("mensagemErro", "CEP não encontrado no banco de dados do ViaCEP, tente novamente.");
-				return "redirect:/";
+			model.addAttribute("mensagemErro", "CEP não encontrado no banco de dados do ViaCEP, tente novamente.");
+				return "index";
 			}
 		}
 
