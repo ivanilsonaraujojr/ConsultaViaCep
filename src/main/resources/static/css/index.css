@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+body{
+	background-color: black;
+}
+.centro{
+	margin: 0 auto !important;
+}
+.titulo{
+	font-family: 'Fredoka One', cursive;
+}
+.formularioConsulta{
+	padding:5px;
+	width:65%;
+	margin: 0 auto;
+	border-image-slice: 1;
+ 	border-width: 1px;
+	border-image-source:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 25%, rgba(0,212,255,1) 100%);
+	box-shadow: -1px 8px 23px -13px rgba(0,0,0,0.75);
+}
+.containerFormulario{
+	background-color: white;
+	border-radius: 20px 20px 0 0;
+	padding: 25px;
+	width:50%;
+	margin:50px auto 0 auto;
+}
+.campoCepCodigo{
+	width: 50%;
+}
+.subtitulo{
+	font-family: 'PT Sans', sans-serif;
+	font-size: 1.6rem;
+	text-align: center;
+}
+.containerResultado{
+	background-color: #2B81FD;
+	border-radius: 0 0 20px 20px;
+	padding: 10px;
+	width:50%;
+	margin:0px auto;
+}
+
+.footer {
+  	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  	text-align: center;
+  	width: 50%;
+  	height: 60px;
+  	line-height: 60px;
+  	border-radius:50px 50px 0 0 ;
+  	background-color: #f5f5f5;
+}

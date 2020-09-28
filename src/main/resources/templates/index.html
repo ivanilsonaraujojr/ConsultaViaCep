@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.5.2/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/index.css"/>
+<title>Consultar CEP</title>
+</head>
+<body>
+	<main>
+	<div class="containerFormulario">
+	
+    <h2 class="text-center titulo display-4">Consultar CEP - Endereço</h2>
+    <form class="formularioConsulta" th:object="${cepInserido}" method="post">
+    <div class="form-group text-center">
+    	<label for="cepCodigo" class="subtitulo">Digite um CEP válido:</label>
+    	<p class="alert alert-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></p> 
+        <input type="text" class="form-control centro campoCepCodigo" placeholder="xx.xxx-xxx" autocomplete="off" name="cepCodigo" id="cepCodigo" th:field="*{codigo}" />
+        <button type="submit" class="mt-2 btn btn-primary" id="btnConsultar" disabled>Consultar</button>
+    </div>
+    </form>
+   	</div>
+   	
+    <th:block th:include="mensagemValidacao"></th:block>
+    
+    <div class="container containerResultado" th:each="cep: ${cep}" th:if="${cep}">
+    <h2 class="text-center titulo text-white">Resultado :</h2>
+     
+    <div class="row centro w-75">
+    <div class="col-md-4">
+    <p class="titulo text-center">Cep</p>
+    <p class="m-2 text-center form-control" th:text="${cep.cep}"></p>
+    </div>
+    <div class="col-md-8">
+    <p class="titulo text-center">Logradouro</p>
+    <p class="m-1 text-center form-control" th:text="${cep.logradouro}"></p>
+    </div>
+    </div>
+    
+    <div class="row centro w-75">
+    <div class="col-md-8">
+    <p class="titulo text-center">Rua</p>
+    <p class="m-1 text-center form-control" th:text="${cep.localidade}"></p>
+    </div>
+    <div class="col-md-4">
+    <p class="titulo text-center">Bairro</p>
+    <p class="m-1 text-center form-control" th:text="${cep.bairro}"></p>
+    </div>
+    </div>
+    
+    <div class="row centro w-25">
+    <div class="col-md-12">
+    <p class="titulo text-center">Estado</p>
+    <p class="text-center form-control" th:text="${cep.uf}">a</p>
+    </div>
+    </div>
+    
+    </div>
+	</main>
+	
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Feito utilizando o webservice da <a target="_blank" href="https://viacep.com.br">ViaCEP</a> e tecnologias do Spring(Spring MVC, RestTemplate, Spring Boot...)</span>
+      </div>
+    </footer>
+</body>
+<script type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
+<script type="text/javascript" src="js/jquery.maskedinput-1.1.4.pack.js"/></script>
+<script src="js/MascaraCep.js"></script>
+<script src="js/script.js"></script>
+</html>
