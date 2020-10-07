@@ -28,32 +28,32 @@
     <div class="d-flex-inline container containerResultado" th:each="cep: ${cep}" th:if="${cep}">
     <h2 class="text-center titulo text-white">Resultado :</h2>
      
-    <div class="row centro w-75">
+    <div class="row centro w-100">
     <div class="col-md-12 col-lg-5">
     <p class="titulo text-center">Cep</p>
-    <p class="m-2 text-center form-control" th:text="${cep.cep}"></p>
+    <p class="m-2 text-center form-control campoResultado" th:text="${cep.cep}"></p>
     </div>
     <div class="col-md-12 col-lg-7">
     <p class="titulo text-center">Logradouro</p>
-    <p class="m-1 text-center form-control" th:text="${cep.logradouro}"></p>
+    <p class="m-1 text-center form-control campoResultado" th:text="${cep.logradouro}"></p>
     </div>
     </div>
     
-    <div class="row centro w-75">
+    <div class="row centro w-100">
     <div class="col-md-12 col-lg-8">
     <p class="titulo text-center">Rua</p>
-    <p class="m-1 text-center form-control" th:text="${cep.localidade}"></p>
+    <p class="m-1 text-center form-control campoResultado" th:text="${cep.localidade}"></p>
     </div>
     <div class="col-md-12 col-lg-4">
     <p class="titulo text-center">Bairro</p>
-    <p class="m-1 text-center form-control" th:text="${cep.bairro}"></p>
+    <p class="m-1 text-center form-control campoResultado" th:text="${cep.bairro}"></p>
     </div>
     </div>
     
     <div class="row centro w-25">
     <div class="col-sm-12">
     <p class="titulo text-center">Estado</p>
-    <p class="text-center form-control" th:text="${cep.uf}">a</p>
+    <p class="text-center form-control campoResultado" th:text="${cep.uf}">a</p>
     </div>
     </div>
     
