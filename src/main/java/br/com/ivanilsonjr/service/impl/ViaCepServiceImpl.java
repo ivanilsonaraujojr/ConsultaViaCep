@@ -24,17 +24,12 @@ public class ViaCepServiceImpl implements ViaCepService {
 	@Override
 	public ResponseEntity<ConsultaDto> consultarCep(String cep) {
 			String urlRequest = urlWsViaCep + cep + "/json";
-		try {
 			ResponseEntity<Consulta> responseStatus = restTemplate().getForEntity(urlRequest, Consulta.class);
 
 			if (responseStatus.getBody().isErro() || !responseStatus.getStatusCode().is2xxSuccessful()) {
 				return null;
 			}
 			return ResponseEntity.ok(new ConsultaDto(responseStatus.getBody()));
-		} catch (Exception e) {
-			return null;
 		}
 
 	}
-
-}
