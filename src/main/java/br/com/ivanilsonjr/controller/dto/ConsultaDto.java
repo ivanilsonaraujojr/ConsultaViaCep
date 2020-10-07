@@ -1,6 +1,7 @@
 package br.com.ivanilsonjr.controller.dto;
 
 import br.com.ivanilsonjr.model.Consulta;
+import br.com.ivanilsonjr.model.enums.EstadosEnum;
 
 public class ConsultaDto {
 	private String cep;
@@ -17,7 +18,7 @@ public class ConsultaDto {
 		this.logradouro = consulta.getLogradouro();
 		this.bairro = consulta.getBairro();
 		this.localidade = consulta.getLocalidade();
-		this.uf = consulta.getUf();
+		this.uf = EstadosEnum.conveterNome(consulta.getUf());
 	}
 
 	public String getCep() {
